@@ -9,6 +9,5 @@ This repository contains aliases and configurations for ZSH and [Oh My ZSH](http
 ## Helpful Commands
 - `alias` will show all of the available aliases
 - `docker_run` will perform docker run but with added flags like `--rm=True -u $(id -u):$(id -g) -v $(pwd):/data`
-- `git_show_branches` will print local and remote git branches 
 - `pkg_update_report` will display downloaded packages, note: this is set to run each shell by default
 - `check_password_age` will display password age if over 75 days old, note: this is set to run each shell by default
