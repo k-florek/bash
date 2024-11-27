@@ -67,6 +67,9 @@ source $ZSH/oh-my-zsh.sh
 # disable zsh globbing errors with nomatches
 setopt +o nomatch
 
+# fix zsh less behavior to auto exit if entire file can fit on screen 
+export LESS=-FRX
+
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
