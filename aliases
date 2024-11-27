@@ -3,7 +3,7 @@
 ##### ------------------------------------------------------------------
 
 ### --------------------------------------------------------------------
-### Bash
+### Bash Aliases
 ### --------------------------------------------------------------------
 alias c='clear'
 alias ll='ls -alsh'
@@ -40,9 +40,16 @@ alias gpumeminfo='grep -i --color memory /var/log/Xorg.0.log'
 
 
 ### --------------------------------------------------------------------
-### Terraform
+### Terraform Aliases
 ### --------------------------------------------------------------------
 alias tf='terraform'
+
+
+
+### --------------------------------------------------------------------
+### Git Aliases
+### --------------------------------------------------------------------
+alias gitlog="git log --simplify-by-decoration --pretty='tformat:%C(auto)%h %as%d %s'"
 
 
 
@@ -55,14 +62,6 @@ function docker_run() {
 docker run --rm=True -u $(id -u):$(id -g) -v $(pwd):/data "$@"
 }
 
-
-# show git branches both remote and local
-git_show_branches() {
-    remote_branches="$(git ls-remote --heads origin)"
-    git branch -a
-    echo -e "\033[38;5;202m+++ REMOTE BRANCHES +++\033[0m"
-    echo -e "\033[38;5;208m$remote_branches\033[0m"
-}
 
 
 # count the number of updates in /var/cache/apt/archives and report
