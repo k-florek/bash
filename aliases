@@ -37,6 +37,9 @@ alias cpuinfo='lscpu'
 # get GPU ram on desktop / laptop
 alias gpumeminfo='grep -i --color memory /var/log/Xorg.0.log'
 
+# Paste image in clipboard to File
+alias xpaste="xclip -selection clipboard -t image/png -o > \"$(date +%Y-%m-%d_%T).png\""
+
 
 
 ### --------------------------------------------------------------------
@@ -60,6 +63,19 @@ alias gitlog="git log --simplify-by-decoration --pretty='tformat:%C(auto)%h %as%
 # Docker run
 function docker_run() {
 docker run --rm=True -u $(id -u):$(id -g) -v $(pwd):/data "$@"
+}
+
+
+
+# Open the current cli path using the file manager
+alias o='open'
+open() {
+    if [ $# -eq 0 ]; then
+        xdg-open . 2> /dev/null & disown
+    else
+        xdg-open $* 2> /dev/null & disown
+    fi
+	
 }
 
 
