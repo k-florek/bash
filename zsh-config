@@ -96,3 +96,5 @@ pkg_update_report
 
 # uncomment to report on age of system password
 check_password_age
+
+#Gogh Themes https://github.com/Gogh-Co/Gogh
